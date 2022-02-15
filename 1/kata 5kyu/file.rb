@@ -1,6 +1,5 @@
 class PaginationHelper
-
-  attr_accessor :colection, :items_per_page
+  
   # The constructor takes in an array of items and a integer indicating how many
   # items fit within a single page
   def initialize(collection, items_per_page)

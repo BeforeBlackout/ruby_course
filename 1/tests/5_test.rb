@@ -1,43 +1,21 @@
-require './file.rb'
+require './5_file.rb'
 
-describe '#page_count' do
-  it "return the number of pages" do
-    helper = PaginationHelper.new(['a','b','c','d','e','f'], 4)
-    expect(helper.page_count).to eq 2  
-  end   
-end
-
-describe "#item_count" do
-  it "return the number of items within the entire collection" do
-    helper = PaginationHelper.new(['a','b','c','d','e','f'], 4)
-    expect(helper.item_count).to eq 6
-  end
-end
-
-describe '#page_item_count(page_index)' do
-  it "returns the number of items on the current page" do
-    helper = PaginationHelper.new(['a','b','c','d','e','f'], 4)
-    index = 1
-    expect(helper.page_item_count(index)).to eq 2 
-  end
-
-  it "returns '-1' for page_index that are out of range" do
-    helper = PaginationHelper.new(['a','b','c','d','e','f'], 4)
-    index = 10 
-    expect(helper.page_item_count(index)).to be -1
-  end
-end
-
-describe '#page_index(item_index)' do
-  it "determines what page an item is on" do 
-    helper = PaginationHelper.new(['a','b','c','d','e','f'], 4)
-    index = 2 
-    expect(helper.page_index(index)).to eq 0
+describe ".find(seq)" do
+  context "when seq passed with 1 missing element" do
+    it "returns skipped element" do
+      expect(find([3, 9, 1, 11, 13, 5])).to eq(7)
+    end 
   end
   
-  it "returns '-1' for item_index values that are out of range" do 
-    helper = PaginationHelper.new(['a','b','c','d','e','f'], 4)
-    index = 20 
-    expect(helper.page_index(index)).to be -1
+  context "when empty array passed" do
+    it "returns empty array" do
+      expect(find([])).to eq([1])
+    end
+  end
+ 
+  context "when array with only 1 element passed" do
+    it "returns empty array" do
+      expect(find([4])).to eq([])
+    end 
   end
 end

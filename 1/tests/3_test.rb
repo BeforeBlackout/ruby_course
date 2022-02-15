@@ -1,4 +1,4 @@
-require './file.rb'
+require './3_file.rb'
 
 describe '#stray(numbers)' do
   it "returns one different number" do 

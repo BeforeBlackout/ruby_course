@@ -1,4 +1,4 @@
-require './file.rb'
+require './1_file.rb'
 
 describe '#remove(s)' do
   it "remove all exclamation marks from the end of sentence" do
