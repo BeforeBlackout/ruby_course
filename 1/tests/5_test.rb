@@ -9,7 +9,7 @@ describe ".find(seq)" do
   
   context "when empty array passed" do
     it "returns empty array" do
-      expect(find([])).to eq([1])
+      expect(find([])).to eq([])
     end
   end
  
